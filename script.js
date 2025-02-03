@@ -3,23 +3,23 @@ const products = [
     name: "Tênis Esportivo",
     description: "Tênis confortável e resistente para atividades físicas.",
     price: "R$ 199,99",
-    stock: 10,
+    stock: 0,
     imageUrl: "https://via.placeholder.com/300x200?text=Tenis+Esportivo",
     whatsappNumber: "+5581989821222"
   },
   {
-    name: "Camiseta Casual",
-    description: "Camiseta de algodão macio e confortável.",
-    price: "R$ 49,99",
-    stock: 20,
-    imageUrl: "https://via.placeholder.com/300x200?text=Camiseta+Casual",
+    name: "Ovo de Páscoa de Colher",
+    description: "Ovo de Páscoa de Colher: Uma deliciosa casca de chocolate recheada com seus sabores favoritos, perfeita para presentear e se deliciar nesta Páscoa.",
+    price: "R$ 4,99",
+    stock: 0,
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyU0Oij3GNYyxg94dWlZpY0HDpiqgQuWH6zg&usqp=CAU",
     whatsappNumber: "+5581989821222"
   },
   {
-    name: "Pippos Churrasco 30g",
+    name: "Pippo\'s Churrasco 30g",
     description: "Um delicioso Pipo's sabo Churrasco.",
     price: "R$ 1,99",
-    stock: 15,
+    stock: 0,
     imageUrl: "https://www.saobraz.com.br/files/product/17247836467532-pipposchurrasco75gnovo.png",
     whatsappNumber: "+5581989821222"
   }
