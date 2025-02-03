@@ -1,58 +1,65 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const productsContainer = document.getElementById("products");
-    const cartList = document.getElementById("cart-list");
-    const checkoutButton = document.getElementById("checkout");
+const products = [
+  {
+    name: "Tênis Esportivo",
+    description: "Tênis confortável e resistente para atividades físicas.",
+    price: "R$ 199,99",
+    stock: 10,
+    imageUrl: "https://via.placeholder.com/300x200?text=Tenis+Esportivo",
+    whatsappNumber: "+5581989821222"
+  },
+  {
+    name: "Camiseta Casual",
+    description: "Camiseta de algodão macio e confortável.",
+    price: "R$ 49,99",
+    stock: 20,
+    imageUrl: "https://via.placeholder.com/300x200?text=Camiseta+Casual",
+    whatsappNumber: "+5581989821222"
+  },
+  {
+    name: "Calça Jeans",
+    description: "Calça jeans moderna e confortável.",
+    price: "R$ 89,99",
+    stock: 15,
+    imageUrl: "https://via.placeholder.com/300x200?text=Calca+Jeans",
+    whatsappNumber: "+5581989821222"
+  }
+];
 
-    let cart = [];
+// Função para criar o card de cada produto
+function createProductCard(product) {
+  const productCard = document.createElement('div');
+  productCard.classList.add('product-card');
+  
+  productCard.innerHTML = `
+    <img src="${product.imageUrl}" alt="${product.name}" class="product-image">
+    <h1 class="product-name">${product.name}</h1>
+    <p class="product-description">${product.description}</p>
+    <p class="product-price">${product.price}</p>
+    <p class="product-stock">Estoque: ${product.stock} unidades</p>
+    <button class="buy-button" onclick="redirectToWhatsApp('${product.name}', '${product.price}', ${product.stock}, '${product.whatsappNumber}')">Comprar no WhatsApp</button>
+  `;
+  
+  return productCard;
+}
 
-    // Buscar produtos no Realtime Database
-    database.ref("products").once("value", (snapshot) => {
-        snapshot.forEach((childSnapshot) => {
-            let product = childSnapshot.val();
-            let productElement = document.createElement("div");
-            productElement.classList.add("product");
-            productElement.innerHTML = `
-                <h3>${product.name}</h3>
-                <p>R$ ${product.price}</p>
-                <button onclick="addToCart('${product.name}', ${product.price})">Adicionar</button>
-            `;
-            productsContainer.appendChild(productElement);
-        });
-    });
+// Função para exibir todos os produtos
+function displayProducts() {
+  const productList = document.getElementById('product-list');
+  products.forEach(product => {
+    const productCard = createProductCard(product);
+    productList.appendChild(productCard);
+  });
+}
 
-    // Adicionar ao carrinho
-    window.addToCart = (name, price) => {
-        cart.push({ name, price });
-        updateCart();
-    };
+// Função para redirecionar para o WhatsApp
+function redirectToWhatsApp(productName, productPrice, stock, whatsappNumber) {
+  const message = `Olá! Gostaria de comprar o ${productName} por ${productPrice}.`
+                + `\nEstoque disponível: ${stock} unidades.`;
 
-    // Atualizar carrinho
-    function updateCart() {
-        cartList.innerHTML = "";
-        cart.forEach(item => {
-            let li = document.createElement("li");
-            li.textContent = `${item.name} - R$ ${item.price}`;
-            cartList.appendChild(li);
-        });
-    }
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  
+  window.location.href = whatsappUrl;
+}
 
-    // Finalizar compra via WhatsApp
-    checkoutButton.addEventListener("click", () => {
-        if (cart.length === 0) {
-            alert("Seu carrinho está vazio!");
-            return;
-        }
-
-        let message = "Pedido:%0A";
-        let total = 0;
-        cart.forEach(item => {
-            message += `- ${item.name}: R$ ${item.price}%0A`;
-            total += item.price;
-        });
-        message += `%0ATotal: R$ ${total}`;
-
-        let phoneNumber = "SEU_NUMERO_WHATSAPP";  // Substitua pelo seu número
-        let url = `https://wa.me/${phoneNumber}?text=${message}`;
-        window.location.href = url;
-    });
-});
+// Exibe os produtos quando a página é carregada
+window.onload = displayProducts;
