@@ -16,11 +16,11 @@ const products = [
     whatsappNumber: "+5581989821222"
   },
   {
-    name: "Calça Jeans",
-    description: "Calça jeans moderna e confortável.",
-    price: "R$ 89,99",
+    name: "Pippo's Churrasco 30g",
+    description: "",
+    price: "R$ 1,99",
     stock: 15,
-    imageUrl: "https://via.placeholder.com/300x200?text=Calca+Jeans",
+    imageUrl: "https://www.saobraz.com.br/files/product/17247836467532-pipposchurrasco75gnovo.png",
     whatsappNumber: "+5581989821222"
   }
 ];
