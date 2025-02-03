@@ -6,10 +6,10 @@ body {
   background-color: #f4f4f4;
 }
 
-.product-container {
+#product-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 cards por fileira */
-  gap: 20px;
+  gap: 20px; /* Espaço entre os cards */
   max-width: 800px; /* Largura máxima do container */
   margin-top: 20px;
 }
@@ -21,6 +21,9 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
   transition: transform 0.3s ease; /* Animação suave no hover */
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .product-card:hover {
@@ -29,7 +32,7 @@ body {
 
 .product-image {
   width: 100%;
-  height: auto;
+  height: 200px; /* Definir altura fixa */
   border-radius: 10px;
   object-fit: cover; /* Garante que a imagem preencha bem o espaço */
   margin-bottom: 10px;
