@@ -16,7 +16,7 @@ const products = [
     whatsappNumber: "+5581989821222"
   },
   {
-    name: "Pippo's Churrasco 30g",
+    name: "Pippos Churrasco 30g",
     description: "Um delicioso Pipo's sabo Churrasco.",
     price: "R$ 1,99",
     stock: 15,
