@@ -17,7 +17,7 @@ const products = [
   },
   {
     name: "Pippo's Churrasco 30g",
-    description: "",
+    description: "Um delicioso Pipo's sabo Churrasco.",
     price: "R$ 1,99",
     stock: 15,
     imageUrl: "https://www.saobraz.com.br/files/product/17247836467532-pipposchurrasco75gnovo.png",
