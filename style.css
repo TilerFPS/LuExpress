@@ -1,62 +1,76 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
 }
 
 .product-container {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards por fileira */
+  gap: 20px;
+  max-width: 800px; /* Largura máxima do container */
+  margin-top: 20px;
 }
 
 .product-card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease; /* Animação suave no hover */
   text-align: center;
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
 }
 
 .product-image {
   width: 100%;
-  border-radius: 8px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover; /* Garante que a imagem preencha bem o espaço */
+  margin-bottom: 10px;
 }
 
 .product-name {
-  font-size: 1.5em;
+  font-size: 18px;
+  font-weight: bold;
   margin: 10px 0;
 }
 
 .product-description {
+  font-size: 14px;
   color: #555;
-  margin: 10px 0;
+  margin-bottom: 10px;
 }
 
 .product-price {
-  font-size: 1.2em;
-  color: #E74C3C;
-  margin: 10px 0;
+  font-size: 16px;
+  color: #2a9d8f;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .product-stock {
-  color: #2ecc71;
-  font-weight: bold;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
 }
 
 .buy-button {
-  background-color: #25D366;
+  background-color: #2a9d8f;
   color: white;
-  font-size: 1.1em;
   border: none;
-  padding: 10px;
-  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
   border-radius: 5px;
-  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .buy-button:hover {
-  background-color: #128C7E;
+  background-color: #1f7a6b;
 }
