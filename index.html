@@ -2,13 +2,116 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lumine Market</title>
-  <link rel="stylesheet" href="style.css">
+  <title>LuExpress</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f6f6f6;
+    }
+    header {
+      background: #ff5722;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header input {
+      padding: 8px;
+      width: 50%;
+      border: none;
+      border-radius: 5px;
+    }
+    nav {
+      background: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .produto {
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #ccc;
+      text-align: center;
+    }
+    .produto img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .produto h3 {
+      font-size: 16px;
+      margin: 10px 0 5px;
+    }
+    .produto p {
+      color: green;
+      font-weight: bold;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <div class="product-container" id="product-list"></div>
 
-  <script src="script.js"></script>
+  <header>
+    <h1>LuExpress</h1>
+    <input type="text" placeholder="Buscar produtos...">
+  </header>
+
+  <nav>
+    <a href="#">Eletrônicos</a>
+    <a href="#">Moda</a>
+    <a href="#">Casa</a>
+    <a href="#">Beleza</a>
+    <a href="#">Esportes</a>
+  </nav>
+
+  <section class="produtos">
+    <div class="produto">
+      <img src="https://m.media-amazon.com/images/I/71OdL169s+L.jpg" alt="Produto 1">
+      <h3>Luvinha De Dedo BlueMagic V1 Anti-suor</h3>
+      <p>R$ 14,90</p>
+    </div>
+    <div class="produto">
+      <img src="https://via.placeholder.com/180" alt="Produto 2">
+      <h3>Camisa Estilosa</h3>
+      <p>R$ 39,90</p>
+    </div>
+    <div class="produto">
+      <img src="https://via.placeholder.com/180" alt="Produto 3">
+      <h3>Luminária LED</h3>
+      <p>R$ 59,90</p>
+    </div>
+    <div class="produto">
+      <img src="https://via.placeholder.com/180" alt="Produto 4">
+      <h3>Smartwatch</h3>
+      <p>R$ 129,00</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 LuExpress - Todos os direitos reservados | <a href="#" style="color: #ff9800;">Ajuda</a> | <a href="#" style="color: #ff9800;">Termos</a>
+  </footer>
+
 </body>
 </html>
